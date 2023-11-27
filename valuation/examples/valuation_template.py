@@ -1,6 +1,7 @@
 """valuation_template.py"""
 
 from valuation.koyfin_valuation_model import KoyfinStockValuation
+from datetime import date
 
 # ______________________________________________________________________________________________________________________
 # what is the story?
@@ -31,5 +32,9 @@ company_data = valuation.koyfin_analyst.get_company_data()
 # ______________________________________________________________________________________________________________________
 # monte carlo simulation
 df = valuation.run_monte_carlo_simulation(return_price_dist=True)
+
+# save to excel
+file_path = f'{valuation.koyfin_analyst.company.replace(" ", "_")}_{date.today().strftime("%Y%m%d")}.xlsx'
+valuation.valuation_results_to_excel(file_path=file_path)
 print(df)
 
