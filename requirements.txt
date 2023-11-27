@@ -1,0 +1,9 @@
+pandas
+numpy
+openpyxl
+xlrd
+fredapi
+scipy
+tqdm
+yahoo-fin
+xlsxwriter
